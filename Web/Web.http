@@ -1,0 +1,52 @@
+@Web_HostAddress = http://localhost:1337
+
+POST {{Web_HostAddress}}/api/sessions/admin
+Content-Type: application/json
+
+{
+  "Password": "admin123"
+}
+
+###
+POST {{Web_HostAddress}}/api/accounts
+Content-Type: application/json
+SessionId: 5de6f798-62ee-4e9d-9681-d91e184ac8f6
+
+{
+  "accountId": 12345,
+  "pinCode": "1234",
+  "initialBalance": 1000
+}
+
+###
+
+POST {{Web_HostAddress}}/api/sessions/user
+Content-Type: application/json
+
+{
+  "accountId": 12345,
+  "pinCode": "1234"
+}
+
+###
+
+POST {{Web_HostAddress}}/api/accounts/deposit
+Content-Type: application/json
+SessionId: 0b9d6a85-2666-4115-8ce9-8da3401abfa6
+
+{
+  "amount": 500
+}
+
+###
+GET {{Web_HostAddress}}/api/accounts/balance
+SessionId: 0b9d6a85-2666-4115-8ce9-8da3401abfa6
+
+###
+POST {{Web_HostAddress}}/api/accounts/withdraw
+Content-Type: application/json
+Session-Id:
+
+{
+  "amount": 250
+}

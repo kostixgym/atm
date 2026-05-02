@@ -1,0 +1,11 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Mvc" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Lab5.Application.Contracts\Lab5.Application.Contracts.csproj" />
+    </ItemGroup>
+
+</Project>
